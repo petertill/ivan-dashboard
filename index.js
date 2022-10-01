@@ -13,7 +13,8 @@ const {MongoClient} = require('mongodb');
 
 app.use(bodyParser.text());
 
-const uri = "mongodb+srv://petyadev:Faszom200@cluster0.5oqtz.mongodb.net/?retryWrites=true&w=majority";
+
+const uri = process.env.MONGO;
 const client = new MongoClient(uri);
 
 app.use(express.static('public'));

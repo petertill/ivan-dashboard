@@ -89,7 +89,7 @@ app.listen(8081)
 
 async function main(){
     
-    const uri = "mongodb+srv://petyadev:Faszom200@cluster0.5oqtz.mongodb.net/?retryWrites=true&w=majority";
+    const uri = "";
  
 
     const client = new MongoClient(uri);
@@ -128,7 +128,7 @@ async function main(){
 
 
                         //MONGO
-const uri = "mongodb+srv://petyadev:Faszom200@cluster0.5oqtz.mongodb.net/?retryWrites=true&w=majority";
+const uri = "";
  
 
 const client = new MongoClient(uri);
@@ -150,7 +150,7 @@ async function findDataEntry(nameOfListing) {
 
 
                         //MONGO
-const uri = "mongodb+srv://petyadev:Faszom200@cluster0.5oqtz.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.MONGO;
  
 
 const client = new MongoClient(uri);

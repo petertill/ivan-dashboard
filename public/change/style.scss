@@ -1,0 +1,64 @@
+#changelog-container {
+  width: 720px;
+  margin:0 auto;
+  padding-top:50px;
+  color:#1a3754;
+
+  a {
+    color:#1c9bdd;
+    text-decoration:none;
+  }
+
+  .logo {
+    margin-bottom:50px;
+    text-align: center;
+  }
+
+  .header {
+    margin-bottom:50px;
+    margin-top:50px;
+    font-size:40px;
+    font-weight:bold;
+    text-align: center;
+  }
+
+  .changelog-item {
+    padding-top:35px;
+    padding-bottom:35px;
+    border-top:1px solid #eeeeee;
+    .date {
+      display:inline-block;
+      width:170px;
+      vertical-align: top;
+      opacity:.5;
+    }
+    .content {
+      display:inline-block;
+      width:540px;
+      .title {
+        font-size:28px;
+        font-weight:600;
+        line-height:28px;
+      }
+      .type {
+        display:inline-block;
+        color:white;
+        border-radius:30px;
+        padding:4px 15px 4px 15px;
+        margin-top:12px;
+        margin-bottom:12px;
+        font-size:15px;
+        font-weight:bold;
+      }
+      .new {background-color:#1c9bdd;}
+      .improvement {background-color:#2cb967;}
+      .fix {background-color:#ffb400;}
+      .body {
+        font-size:18px;
+        font-weight:300;
+        line-height:26px;
+      }
+    }
+  }
+}
+

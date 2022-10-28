@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Belépés - Magyar Kommunista Blokk</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+		body{
+			background-color: lightgray;
+		}
+		.login-modal{
+			background-color: white;
+			width: 50%;
+		}
+		input{
+			padding: 5px;
+			width: 70%;
+			border-radius: 5px;
+			border: none;
+      max-width: 400px;
+		}
+		.logindiv{
+			/* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 1);
+width: 50%;align-content: left; padding: 50px;
+color: white;
+      max-width: 700px;
+		}
+		.btn-green{
+			background-color: green;
+			color: white;
+		}
+		.btn-green:hover{
+			background-color: #00ff00;
+			color: black;
+			cursor: pointer;
+		}
+		</style>
+	</head>
+	<body style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 0%, rgba(102,0,255,1) 100%);"><center>
+	<!--div style="
+            -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.58);
+-moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.58);
+box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.58);
+            
+            background-color: white; width: 50%;align-content: left; padding: 50px;"-->
+			<br><br><div class="logindiv">
+			<h1>Belépés</h1>
+		<br><br>
+	<form method="GET" action="/auth" enctype='application/x-www-form-urlencoded'>
+	<label for="un">Felhasználónév</label><br>
+	<input type="text" name="username" id="un" placeholder="petyadev#1129"><br><br
+	<label for="pw">Jelszó</label><br>
+	<input type="password" name="password" id="pw" placeholder="Passw***"><br><br>
+	<input class="btn-green" type="submit" value="Login">
+	</form><hr>Nincs fiókod? Próbálj meg <a href="register.php">belépni Discorddal</a> a fiók létrehozásához!
+	</div></center>
+	</body>
+</html>

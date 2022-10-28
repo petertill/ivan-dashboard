@@ -6,13 +6,14 @@
 -->
 <html>
 	<head>
-		<title>Generic - Solid State by HTML5 UP</title>
+		<title>Dashboard - MKB</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <script src="https://cdn.jsdelivr.net/npm/mongodb@4.10.0/lib/index.min.js"></script>
     <script src="js/database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -33,11 +34,8 @@
 						<div class="inner">
 							<h2>Menu</h2>
 							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
+								<li><a href="index.html">Dashboard</a></li>
+								<li><a href="../">Log Out</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -55,10 +53,68 @@
 						<!-- Content -->
 							<div class="wrapper">
 								<div class="inner">
+                  <!-- chart -->
+                    <canvas id="myChart" style="width:100%; color: white;"></canvas>
+                    <script>
+var xValues = ["Január","Február","Március","Április","Május","Június","Július","Augusztus","Szeptember","Október","November", "December"];
 
-									<h3 class="major">Lorem ipsum dolor</h3>
-									<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{ 
+      data: [50645,45321,70000,120000,20000,34569,133432,76321,50000,202345],
+      borderColor: "red",
+      fill: true,
+      label: "Rubeljeid"
+    }, { 
+      data: [1600,300000,20000,40000,10000,98000,600000,10000,10000,30000],
+      borderColor: "green",
+      fill: false,
+      label: "Árfolyam"
+    }/*, { 
+      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+      borderColor: "blue",
+      fill: false
+    }*/]
+  },
+  options: {
+    legend: {
+      display: true,
+    }
+  }
+});
 
+  
+</script>
+									<h3 class="major">A pártod</h3>
+									<p>Itt megtekintheted, hogy hogyan teljesített a pártod az előző választásokon, a párt tőkéit, illetve képviselőket adhatsz hozzá</p>
+                  <canvas id="myChartPie" style="width:100%;max-width:600px"></canvas>
+<script>
+var xValues = ["MSZMP", "Egyesült kapitalisták"];
+var yValues = [92, 8];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+
+new Chart("myChartPie", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+  
+  }
+});
+</script>
 									<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
 
 									<h3 class="major">Vitae phasellus</h3>
@@ -149,6 +205,8 @@ console.log(user.rubels)
                     document.getElementById("display_result").innerText = `üdv, ${username} elvtárs!`
                   document.getElementById("photo").src = photosrc
                   document.getElementById("rubel").innerText = user.rubels + " rubeled van."
+
+                  
                   //document.getElementByClassName("rubel").innerText = user.rubels
                 }
 

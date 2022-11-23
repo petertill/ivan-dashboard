@@ -57,24 +57,14 @@ app.post('/', function (req, res) {
                 .get("https://discordapp.com/api/users/@me",config)
                 .then(response=>{
 
-                  var stored = (async () => await findDataEntry(parseInt(response.data.id)))();
-                  console.log(stored)
-
-                  stored.then(function(result){
-                   console.log(result)
-                    
                   
    // "Some User token"
-                    //parties.then(function(paresult){
-                      
-                    
 
               
-                    const obj = {username: response.data.username, discriminator: response.data.discriminator, avatar: response.data.avatar, id: response.data.id, rubels: result.smackers};
+                    const obj = {username: response.data.username, discriminator: response.data.discriminator, avatar: response.data.avatar, id: response.data.id};
                     const string = JSON.stringify(obj);
                     console.log(response.data.username)
                     res.send(string)
-
 })
                   
                 })
@@ -82,7 +72,7 @@ app.post('/', function (req, res) {
                     console.log(error)
                 })
         })
-})
+
 app.listen(8081)
 
 
@@ -96,7 +86,7 @@ app.listen(8081)
 
 async function main(){
     
-    const uri = "";
+    const uri = "mongodb+srv://petyadev:Faszom200@cluster0.5oqtz.mongodb.net/?retryWrites=true&w=majority";
  
 
     const client = new MongoClient(uri);
@@ -135,7 +125,7 @@ async function main(){
 
 
                         //MONGO
-const uri = "";
+const uri = "mongodb+srv://petyadev:Faszom200@cluster0.5oqtz.mongodb.net/?retryWrites=true&w=majority";
  
 
 const client = new MongoClient(uri);
@@ -150,14 +140,14 @@ const client = new MongoClient(uri);
 }
 main().catch(console.error); */
 
-async function findDataEntry(nameOfListing) {
+/* async function findDataEntry(nameOfListing) {
 
 
   try {
 
 
                         //MONGO
-const uri = process.env.MONGO;
+const uri = "mongodb+srv://petyadev:Faszom200@cluster0.5oqtz.mongodb.net/?retryWrites=true&w=majority";
  
 
 const client = new MongoClient(uri);
@@ -181,44 +171,4 @@ const client = new MongoClient(uri);
     } else {
         console.log(`No listings found with the id '${nameOfListing}'`);
     }
-}
-
-
-
-
-
-
-
-
-async function findPartyEntry(nameOfListing) {
-
-
-  try {
-
-
-                        //MONGO
-const uri = process.env.MONGO;
- 
-
-const client = new MongoClient(uri);
-//Mongo end
-                        // Connect to the MongoDB cluster
-                        client.connect();
-                      } catch (e) {
-                        console.error(e);
-                      } finally {
-                        //client.close();
-                      }
-
-
-  
-    const result =  await client.db("partydb").collection("partycollection").findOne({userid: nameOfListing});
-
-    if (result) {
-        console.log(`Found a listing in the collection with the id '${nameOfListing}':`);
-      return result;
-      //console.log(result.smackers)
-    } else {
-        console.log(`No listings found with the id '${nameOfListing}'`);
-    }
-}
+}*/
